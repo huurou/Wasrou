@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Wasrou.Binary\Wasrou.Binary.csproj" />
+    <ProjectReference Include="..\Wasrou.Structure\Wasrou.Structure.csproj" />
+  </ItemGroup>
+
 </Project>
