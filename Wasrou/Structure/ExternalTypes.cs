@@ -4,21 +4,21 @@ using System.Linq;
 
 namespace Wasrou.Structure;
 
-public abstract record ExternType;
+internal abstract record ExternType;
 
-public record FunctionType : ExternType
+internal record FunctionType : ExternType
 {
-    public List<ValueType> Parameters { get; init; }
-    public List<ValueType> Results { get; init; }
+    internal List<ValueType> Parameters { get; init; }
+    internal List<ValueType> Results { get; init; }
 
-    public FunctionType(IEnumerable<ValueType>? parameters = null, IEnumerable<ValueType>? results = null)
+    internal FunctionType(IEnumerable<ValueType>? parameters = null, IEnumerable<ValueType>? results = null)
     {
         Parameters = parameters?.ToList() ?? new();
         Results = results?.ToList() ?? new();
     }
 
-    public int ParamCount => Parameters.Count;
-    public int ResultCount => Results.Count;
+    internal int ParamCount => Parameters.Count;
+    internal int ResultCount => Results.Count;
 
     public virtual bool Equals(FunctionType? other)
     {
@@ -45,8 +45,8 @@ public record FunctionType : ExternType
     }
 }
 
-public record MemoryType(uint Min, uint? Max = null) : ExternType;
+internal record MemoryType(uint Min, uint? Max = null) : ExternType;
 
-public record TableType(ReferenceType ReferenceType, uint Min, uint? Max = null) : ExternType;
+internal record TableType(ReferenceType ReferenceType, uint Min, uint? Max = null) : ExternType;
 
-public record GlobalType(ValueType ValueType, bool Mutable = false) : ExternType;
+internal record GlobalType(ValueType ValueType, bool Mutable = false) : ExternType;

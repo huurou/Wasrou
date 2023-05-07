@@ -3,14 +3,14 @@ using System.Linq;
 
 namespace Wasrou.Structure;
 
-public class Expression
+internal class Expression
 {
     // instr*部分だけ
-    public List<Instruction> Instrs { get; }
+    internal List<Instruction> Instrs { get; }
     // instr* end
-    public List<Instruction> Value { get; }
+    internal List<Instruction> Value { get; }
 
-    public Expression(IEnumerable<Instruction>? instrs = null)
+    internal Expression(IEnumerable<Instruction>? instrs = null)
     {
         Instrs = instrs?.ToList() ?? new();
         Value = Instrs.Append(new End()).ToList();
