@@ -2,7 +2,7 @@
 
 internal class Start
 {
-    internal FunctionIndex Func { get; init; }
+    internal FunctionIndex Func { get; }
 
     internal Start(FunctionIndex func)
     {

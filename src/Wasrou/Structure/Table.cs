@@ -2,7 +2,7 @@
 
 internal class Table
 {
-    internal TableType Type { get; init; }
+    internal TableType Type { get; }
 
     internal Table(TableType type)
     {

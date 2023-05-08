@@ -2,8 +2,8 @@
 
 internal class Global
 {
-    internal GlobalType Type { get; init; }
-    internal Expression Init { get; init; }
+    internal GlobalType Type { get; }
+    internal Expression Init { get; }
 
     internal Global(GlobalType type, Expression init)
     {

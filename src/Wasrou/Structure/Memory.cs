@@ -2,7 +2,7 @@
 
 internal class Memory
 {
-    internal MemoryType Type { get; init; }
+    internal MemoryType Type { get; }
 
     internal Memory(MemoryType type)
     {

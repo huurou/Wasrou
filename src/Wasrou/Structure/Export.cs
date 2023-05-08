@@ -2,8 +2,8 @@
 
 internal class Export
 {
-    internal string Name { get; init; }
-    internal ExportDesc Desc { get; init; }
+    internal string Name { get; }
+    internal ExportDesc Desc { get; }
 
     internal Export(string name, ExportDesc desc)
     {
@@ -18,7 +18,7 @@ internal abstract class ExportDesc
 
 internal class ExportDescFunc : ExportDesc
 {
-    internal FunctionIndex Value { get; init; }
+    internal FunctionIndex Value { get; }
 
     internal ExportDescFunc(FunctionIndex value)
     {
@@ -28,7 +28,7 @@ internal class ExportDescFunc : ExportDesc
 
 internal class ExportDescTable : ExportDesc
 {
-    internal TableIndex Value { get; init; }
+    internal TableIndex Value { get; }
 
     internal ExportDescTable(TableIndex value)
     {
@@ -38,7 +38,7 @@ internal class ExportDescTable : ExportDesc
 
 internal class ExportDescMemory : ExportDesc
 {
-    internal MemoryIndex Value { get; init; }
+    internal MemoryIndex Value { get; }
 
     internal ExportDescMemory(MemoryIndex value)
     {
@@ -48,7 +48,7 @@ internal class ExportDescMemory : ExportDesc
 
 internal class ExportDescGlobal : ExportDesc
 {
-    internal GlobalIndex Value { get; init; }
+    internal GlobalIndex Value { get; }
 
     internal ExportDescGlobal(GlobalIndex value)
     {

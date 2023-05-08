@@ -5,9 +5,9 @@ namespace Wasrou.Structure;
 
 internal class Function
 {
-    internal TypeIndex Type { get; init; }
-    internal List<ValueType> Locals { get; init; }
-    internal Expression Body { get; init; }
+    internal TypeIndex Type { get; }
+    internal List<ValueType> Locals { get; }
+    internal Expression Body { get; }
 
     internal Function(TypeIndex type, IEnumerable<ValueType>? locals = null, Expression? body = null)
     {

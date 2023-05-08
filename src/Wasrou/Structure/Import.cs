@@ -2,8 +2,8 @@
 
 internal class Import
 {
-    internal string Name { get; init; }
-    internal ImportDesc Desc { get; init; }
+    internal string Name { get; }
+    internal ImportDesc Desc { get; }
 
     internal Import(string name, ImportDesc desc)
     {
@@ -18,7 +18,7 @@ internal abstract class ImportDesc
 
 internal class ImportDescFunc : ImportDesc
 {
-    internal TypeIndex Value { get; init; }
+    internal TypeIndex Value { get; }
 
     internal ImportDescFunc(TypeIndex value)
     {
@@ -28,7 +28,7 @@ internal class ImportDescFunc : ImportDesc
 
 internal class ImportDescTable : ImportDesc
 {
-    internal TableIndex Value { get; init; }
+    internal TableIndex Value { get; }
 
     internal ImportDescTable(TableIndex value)
     {
@@ -38,7 +38,7 @@ internal class ImportDescTable : ImportDesc
 
 internal class ImportDescMemory : ImportDesc
 {
-    internal MemoryType Value { get; init; }
+    internal MemoryType Value { get; }
 
     internal ImportDescMemory(MemoryType value)
     {
@@ -48,7 +48,7 @@ internal class ImportDescMemory : ImportDesc
 
 internal class ImportDescGlobal : ImportDesc
 {
-    internal GlobalType Value { get; init; }
+    internal GlobalType Value { get; }
 
     internal ImportDescGlobal(GlobalType value)
     {

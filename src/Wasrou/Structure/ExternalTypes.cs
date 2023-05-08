@@ -8,8 +8,8 @@ internal abstract record ExternType;
 
 internal record FunctionType : ExternType
 {
-    internal List<ValueType> Parameters { get; init; }
-    internal List<ValueType> Results { get; init; }
+    internal List<ValueType> Parameters { get; }
+    internal List<ValueType> Results { get; }
 
     internal FunctionType(IEnumerable<ValueType>? parameters = null, IEnumerable<ValueType>? results = null)
     {

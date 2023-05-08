@@ -5,9 +5,9 @@ namespace Wasrou.Structure;
 
 internal class Element
 {
-    internal ReferenceType Type { get; init; }
-    internal List<Expression> Init { get; init; }
-    internal ElementMode Mode { get; init; }
+    internal ReferenceType Type { get; }
+    internal List<Expression> Init { get; }
+    internal ElementMode Mode { get; }
 
     internal Element(ReferenceType type, IEnumerable<Expression> init, ElementMode mode)
     {
@@ -27,8 +27,8 @@ internal class ElementModePassive : ElementMode
 
 internal class ElementModeActive : ElementMode
 {
-    internal TableIndex Table { get; init; }
-    internal Expression Offset { get; init; }
+    internal TableIndex Table { get; }
+    internal Expression Offset { get; }
 
     internal ElementModeActive(TableIndex table, Expression offset)
     {
