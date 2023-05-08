@@ -2,9 +2,9 @@
 
 internal class Memory
 {
-    internal MemoryType Type { get; }
+    public MemoryType Type { get; }
 
-    internal Memory(MemoryType type)
+    public Memory(MemoryType type)
     {
         Type = type;
     }

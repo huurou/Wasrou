@@ -8,17 +8,17 @@ internal abstract record ExternType;
 
 internal record FunctionType : ExternType
 {
-    internal List<ValueType> Parameters { get; }
-    internal List<ValueType> Results { get; }
+    public List<ValueType> Parameters { get; }
+    public List<ValueType> Results { get; }
 
-    internal FunctionType(IEnumerable<ValueType>? parameters = null, IEnumerable<ValueType>? results = null)
+    public FunctionType(IEnumerable<ValueType>? parameters = null, IEnumerable<ValueType>? results = null)
     {
         Parameters = parameters?.ToList() ?? new();
         Results = results?.ToList() ?? new();
     }
 
-    internal int ParamCount => Parameters.Count;
-    internal int ResultCount => Results.Count;
+    public int ParamCount => Parameters.Count;
+    public int ResultCount => Results.Count;
 
     public virtual bool Equals(FunctionType? other)
     {

@@ -5,10 +5,10 @@ namespace Wasrou.Structure;
 
 internal class Data
 {
-    internal List<byte> Init { get; }
-    internal DataMode Mode { get; }
+    public List<byte> Init { get; }
+    public DataMode Mode { get; }
 
-    internal Data(IEnumerable<byte> init, DataMode mode)
+    public Data(IEnumerable<byte> init, DataMode mode)
     {
         Init = init.ToList();
         Mode = mode;
@@ -25,10 +25,10 @@ internal class DataModePassive : DataMode
 
 internal class DataModeActive : DataMode
 {
-    internal MemoryIndex Memory { get; }
-    internal Expression Offset { get; }
+    public MemoryIndex Memory { get; }
+    public Expression Offset { get; }
 
-    internal DataModeActive(MemoryIndex memory, Expression offset)
+    public DataModeActive(MemoryIndex memory, Expression offset)
     {
         Memory = memory;
         Offset = offset;

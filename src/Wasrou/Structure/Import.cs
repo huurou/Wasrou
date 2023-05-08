@@ -2,10 +2,10 @@
 
 internal class Import
 {
-    internal string Name { get; }
-    internal ImportDesc Desc { get; }
+    public string Name { get; }
+    public ImportDesc Desc { get; }
 
-    internal Import(string name, ImportDesc desc)
+    public Import(string name, ImportDesc desc)
     {
         Name = name;
         Desc = desc;
@@ -18,9 +18,9 @@ internal abstract class ImportDesc
 
 internal class ImportDescFunc : ImportDesc
 {
-    internal TypeIndex Value { get; }
+    public TypeIndex Value { get; }
 
-    internal ImportDescFunc(TypeIndex value)
+    public ImportDescFunc(TypeIndex value)
     {
         Value = value;
     }
@@ -28,9 +28,9 @@ internal class ImportDescFunc : ImportDesc
 
 internal class ImportDescTable : ImportDesc
 {
-    internal TableIndex Value { get; }
+    public TableIndex Value { get; }
 
-    internal ImportDescTable(TableIndex value)
+    public ImportDescTable(TableIndex value)
     {
         Value = value;
     }
@@ -38,9 +38,9 @@ internal class ImportDescTable : ImportDesc
 
 internal class ImportDescMemory : ImportDesc
 {
-    internal MemoryType Value { get; }
+    public MemoryType Value { get; }
 
-    internal ImportDescMemory(MemoryType value)
+    public ImportDescMemory(MemoryType value)
     {
         Value = value;
     }
@@ -48,9 +48,9 @@ internal class ImportDescMemory : ImportDesc
 
 internal class ImportDescGlobal : ImportDesc
 {
-    internal GlobalType Value { get; }
+    public GlobalType Value { get; }
 
-    internal ImportDescGlobal(GlobalType value)
+    public ImportDescGlobal(GlobalType value)
     {
         Value = value;
     }

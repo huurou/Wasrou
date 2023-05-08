@@ -2,10 +2,10 @@
 
 internal class Global
 {
-    internal GlobalType Type { get; }
-    internal Expression Init { get; }
+    public GlobalType Type { get; }
+    public Expression Init { get; }
 
-    internal Global(GlobalType type, Expression init)
+    public Global(GlobalType type, Expression init)
     {
         Type = type;
         Init = init;

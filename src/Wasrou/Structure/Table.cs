@@ -2,9 +2,9 @@
 
 internal class Table
 {
-    internal TableType Type { get; }
+    public TableType Type { get; }
 
-    internal Table(TableType type)
+    public Table(TableType type)
     {
         Type = type;
     }

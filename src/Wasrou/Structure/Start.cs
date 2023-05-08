@@ -2,9 +2,9 @@
 
 internal class Start
 {
-    internal FunctionIndex Func { get; }
+    public FunctionIndex Func { get; }
 
-    internal Start(FunctionIndex func)
+    public Start(FunctionIndex func)
     {
         Func = func;
     }
