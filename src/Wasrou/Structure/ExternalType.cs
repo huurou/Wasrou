@@ -11,10 +11,10 @@ internal record FunctionType : ExternType
     public List<ValueType> Parameters { get; }
     public List<ValueType> Results { get; }
 
-    public FunctionType(IEnumerable<ValueType>? parameters = null, IEnumerable<ValueType>? results = null)
+    public FunctionType(IEnumerable<ValueType> parameters, IEnumerable<ValueType> results)
     {
-        Parameters = parameters?.ToList() ?? new();
-        Results = results?.ToList() ?? new();
+        Parameters = parameters.ToList();
+        Results = results.ToList();
     }
 
     public int ParamCount => Parameters.Count;

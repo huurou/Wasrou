@@ -8,15 +8,11 @@ internal abstract class NumberType : ValueType
 {
 }
 
-internal abstract class VectorType : ValueType
+internal abstract class IntegerNumberType : ValueType
 {
 }
 
-internal abstract class ReferenceType : ValueType
-{
-}
-
-internal class I32 : NumberType
+internal class I32 : IntegerNumberType
 {
     public static I32 Instance { get; } = new();
 
@@ -25,7 +21,7 @@ internal class I32 : NumberType
     }
 }
 
-internal class I64 : NumberType
+internal class I64 : IntegerNumberType
 {
     public static I64 Instance { get; } = new();
 
@@ -34,7 +30,11 @@ internal class I64 : NumberType
     }
 }
 
-internal class F32 : NumberType
+internal abstract class FloatNumberType : ValueType
+{
+}
+
+internal class F32 : FloatNumberType
 {
     public static F32 Instance { get; } = new();
 
@@ -43,13 +43,17 @@ internal class F32 : NumberType
     }
 }
 
-internal class F64 : NumberType
+internal class F64 : FloatNumberType
 {
     public static F64 Instance { get; } = new();
 
     private F64()
     {
     }
+}
+
+internal abstract class VectorType : ValueType
+{
 }
 
 internal class V128 : VectorType
@@ -59,6 +63,10 @@ internal class V128 : VectorType
     private V128()
     {
     }
+}
+
+internal abstract class ReferenceType : ValueType
+{
 }
 
 internal class FunctionReference : ReferenceType
