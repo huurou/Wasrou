@@ -8,6 +8,17 @@ internal abstract class NumericInstruction : Instruction
 {
 }
 
+internal class I32Const : NumericInstruction
+{
+    public int Value { get; }
+
+    public I32Const(int value)
+    {
+        Value = value;
+    }
+}
+
+
 internal abstract class VariableInstruction : Instruction
 {
 }
@@ -34,18 +45,4 @@ internal class LocalSet : VariableInstruction
     {
         LocalIndex = localIndex;
     }
-}
-
-internal class I32Const : NumericInstruction
-{
-    public int Value { get; }
-
-    public I32Const(int value)
-    {
-        Value = value;
-    }
-}
-
-internal class I32Add : NumericInstruction
-{
 }
