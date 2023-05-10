@@ -1,4 +1,4 @@
-using System.IO;
+ï»¿using System.IO;
 using Wasrou.Binary;
 using Wasrou.Structure;
 using ExportDescFunction = Wasrou.Binary.ExportDescFunction;
@@ -175,7 +175,7 @@ public class DecodeTest
         });
         Assert.That(
             () => BinaryDecoder.Decode(ms),
-            Throws.TypeOf<WasmException>().With.Message.EqualTo(Error.ƒoƒCƒiƒŠ‚ª“r’†‚ÅI‚í‚Á‚Ä‚¢‚Ü‚·.ToString()));
+            Throws.TypeOf<WasmException>().With.Message.EqualTo(Error.ãƒã‚¤ãƒŠãƒªãŒé€”ä¸­ã§çµ‚ã‚ã£ã¦ã„ã¾ã™.ToString()));
     }
 
     [Test]
@@ -187,7 +187,7 @@ public class DecodeTest
         });
         Assert.That(
             () => BinaryDecoder.Decode(ms),
-            Throws.TypeOf<WasmException>().With.Message.EqualTo(Error.ƒ}ƒWƒbƒNƒiƒ“ƒo[‚ª•s³‚Å‚·.ToString()));
+            Throws.TypeOf<WasmException>().With.Message.EqualTo(Error.ãƒã‚¸ãƒƒã‚¯ãƒŠãƒ³ãƒãƒ¼ãŒä¸æ­£ã§ã™.ToString()));
     }
 
     [Test]
@@ -199,7 +199,7 @@ public class DecodeTest
         });
         Assert.That(
             () => BinaryDecoder.Decode(ms),
-            Throws.TypeOf<WasmException>().With.Message.EqualTo(Error.ƒo[ƒWƒ‡ƒ“‚ª•s³‚Å‚·.ToString()));
+            Throws.TypeOf<WasmException>().With.Message.EqualTo(Error.ãƒãƒ¼ã‚¸ãƒ§ãƒ³ãŒä¸æ­£ã§ã™.ToString()));
     }
 
     [Test]
@@ -213,6 +213,6 @@ public class DecodeTest
         });
         Assert.That(
             () => BinaryDecoder.Decode(ms),
-            Throws.TypeOf<WasmException>().With.Message.EqualTo(Error.ƒZƒNƒVƒ‡ƒ“Id‚ª•s³‚Å‚·.ToString()));
+            Throws.TypeOf<WasmException>().With.Message.EqualTo(Error.ã‚»ã‚¯ã‚·ãƒ§ãƒ³IdãŒä¸æ­£ã§ã™.ToString()));
     }
 }
