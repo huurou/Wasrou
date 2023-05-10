@@ -51,27 +51,30 @@ internal class CodeSection
         var instructions = new List<Instruction>();
         while (true)
         {
-            var instr = ReadInstruction(br);
-            if (instr is End) break;
+            var instruction = ReadInstruction(br);
+            instructions.Add(instruction);
+            if (instruction is End) break;
         }
         return new FunctionBody(locals, instructions);
     }
 
     private static Instruction ReadInstruction(BinaryReader br)
     {
-        return (Prefix)br.ReadByte() switch
+        // プリフィックスかオペコードが来る
+        var code = br.ReadByte();
+        return (Prefix)code switch
         {
             Prefix.GC_or_String => throw new System.NotSupportedException(),
             Prefix.FC => throw new System.NotSupportedException(),
             Prefix.SIMD => throw new System.NotSupportedException(),
             Prefix.Thread => throw new System.NotSupportedException(),
-            _ => GetNormalInstruction(br),
+            _ => GetNormalInstruction(br, code),
         };
     }
 
-    private static Instruction GetNormalInstruction(BinaryReader br)
+    private static Instruction GetNormalInstruction(BinaryReader br, byte code)
     {
-        return (NormalOpCode)br.ReadByte() switch
+        return (NormalOpCode)code switch
         {
             NormalOpCode.End => new End(),
             NormalOpCode.LocalGet => new LocalGet(new(br.ReadLEB128Uint32())),

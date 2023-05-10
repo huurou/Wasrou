@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using Wasrou.Structure;
 
 namespace Wasrou.Binary;
@@ -30,9 +29,17 @@ internal class TypeSection
     private static FunctionType ReadFunctionType(BinaryReader br)
     {
         var n = (int)br.ReadLEB128Uint32();
-        var parameters = Enumerable.Range(0, n).Select(_ => Common.GetValueType(br));
+        var parameters = new List<ValueType>(n);
+        for (var i = 0; i < n; i++)
+        {
+            parameters.Add(Common.GetValueType(br));
+        }
         var m = (int)br.ReadLEB128Uint32();
-        var results = Enumerable.Range(0, m).Select(_ => Common.GetValueType(br));
+        var results = new List<ValueType>(m);
+        for (var i = 0; i < m; i++)
+        {
+            results.Add(Common.GetValueType(br));
+        }
         return new(parameters, results);
     }
 }

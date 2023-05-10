@@ -1,53 +1,27 @@
 ﻿namespace Wasrou.Structure;
 
-internal abstract class ValueType
-{
-}
+internal abstract record ValueType;
 
-internal abstract class NumberType : ValueType
-{
-}
+internal abstract record NumberType : ValueType;
 
-internal abstract class IntegerNumberType : NumberType
-{
-}
+internal abstract record IntegerNumberType : NumberType;
 
-internal class I32 : IntegerNumberType
-{
-}
+internal record I32 : IntegerNumberType;
 
-internal class I64 : IntegerNumberType
-{
-}
+internal record I64 : IntegerNumberType;
 
-internal abstract class FloatNumberType : NumberType
-{
-}
+internal abstract record FloatNumberType : NumberType;
 
-internal class F32 : FloatNumberType
-{
-}
+internal record F32 : FloatNumberType;
 
-internal class F64 : FloatNumberType
-{
-}
+internal record F64 : FloatNumberType;
 
-internal abstract class VectorType : ValueType
-{
-}
+internal abstract record VectorType : ValueType;
 
-internal class V128 : VectorType
-{
-}
+internal record V128 : VectorType;
 
-internal abstract class ReferenceType : ValueType
-{
-}
+internal abstract record ReferenceType : ValueType;
 
-internal class FunctionReference : ReferenceType
-{
-}
+internal record FunctionReference : ReferenceType;
 
-internal class ExternalReference : ReferenceType
-{
-}
+internal record ExternalReference : ReferenceType;

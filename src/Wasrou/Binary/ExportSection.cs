@@ -20,9 +20,9 @@ internal class ExportSection
 
     private static Export ReadExport(BinaryReader br)
     {
+        var name = Common.GetName(br);
         var kind = (ExportKind)br.ReadByte();
         var index = br.ReadLEB128Uint32();
-        var name = Common.GetName(br);
         ExportDesc desc = kind switch
         {
             ExportKind.Function => new ExportDescFunction(new(index)),
@@ -54,41 +54,41 @@ internal abstract class ExportDesc
 
 internal class ExportDescFunction : ExportDesc
 {
-    public FunctionIndex Value { get; }
+    public FunctionIndex Index { get; }
 
-    public ExportDescFunction(FunctionIndex value)
+    public ExportDescFunction(FunctionIndex index)
     {
-        Value = value;
+        Index = index;
     }
 }
 
 internal class ExportDescTable : ExportDesc
 {
-    public TableIndex Value { get; }
+    public TableIndex Index { get; }
 
-    public ExportDescTable(TableIndex value)
+    public ExportDescTable(TableIndex index)
     {
-        Value = value;
+        Index = index;
     }
 }
 
 internal class ExportDescMemory : ExportDesc
 {
-    public MemoryIndex Value { get; }
+    public MemoryIndex Index { get; }
 
-    public ExportDescMemory(MemoryIndex value)
+    public ExportDescMemory(MemoryIndex index)
     {
-        Value = value;
+        Index = index;
     }
 }
 
 internal class ExportDescGlobal : ExportDesc
 {
-    public GlobalIndex Value { get; }
+    public GlobalIndex Index { get; }
 
-    public ExportDescGlobal(GlobalIndex value)
+    public ExportDescGlobal(GlobalIndex index)
     {
-        Value = value;
+        Index = index;
     }
 }
 

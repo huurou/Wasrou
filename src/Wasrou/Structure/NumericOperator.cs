@@ -1,18 +1,10 @@
 ﻿namespace Wasrou.Structure;
 
-internal abstract class NumericOperator : NumericInstruction
-{
-}
+internal abstract record NumericOperator : NumericInstruction;
 
-internal abstract class NumericBinaryOperator : NumericOperator
-{
-}
+internal abstract record NumericBinaryOperator : NumericOperator;
 
-internal abstract class IntBinaryOperator : NumericBinaryOperator
-{
-}
+internal abstract record IntBinaryOperator : NumericBinaryOperator;
 
-internal class Add<T> : IntBinaryOperator
-    where T : IntegerNumberType
-{
-}
+internal record Add<T> : IntBinaryOperator 
+    where T : IntegerNumberType;

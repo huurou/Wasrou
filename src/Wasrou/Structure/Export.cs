@@ -16,11 +16,11 @@ internal abstract class ExportDesc
 {
 }
 
-internal class ExportDescFunc : ExportDesc
+internal class ExportDescFunction : ExportDesc
 {
     public FunctionIndex Value { get; }
 
-    public ExportDescFunc(FunctionIndex value)
+    public ExportDescFunction(FunctionIndex value)
     {
         Value = value;
     }

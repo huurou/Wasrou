@@ -4,9 +4,16 @@ namespace Wasrou.Binary;
 
 internal static class BinaryDecoder
 {
-    public static void Decode(Stream stream)
+    public static Module Decode(Stream stream)
     {
         using var br = new BinaryReader(stream);
-        var binModule=new Module(br);
+        try
+        {
+            return new Module(br);
+        }
+        catch (EndOfStreamException eosex)
+        {
+            throw new WasmException(Error.バイナリが途中で終わっています, eosex);
+        }
     }
 }
