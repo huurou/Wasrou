@@ -12,46 +12,14 @@ internal class Export
     }
 }
 
-internal abstract class ExportDesc
+internal abstract record ExportDesc
 {
 }
 
-internal class ExportDescFunction : ExportDesc
-{
-    public FunctionIndex Value { get; }
+internal record ExportDescFunction(FunctionIndex Value) : ExportDesc;
 
-    public ExportDescFunction(FunctionIndex value)
-    {
-        Value = value;
-    }
-}
+internal record ExportDescTable(TableIndex Value) : ExportDesc;
 
-internal class ExportDescTable : ExportDesc
-{
-    public TableIndex Value { get; }
+internal record ExportDescMemory(MemoryIndex Value) : ExportDesc;
 
-    public ExportDescTable(TableIndex value)
-    {
-        Value = value;
-    }
-}
-
-internal class ExportDescMemory : ExportDesc
-{
-    public MemoryIndex Value { get; }
-
-    public ExportDescMemory(MemoryIndex value)
-    {
-        Value = value;
-    }
-}
-
-internal class ExportDescGlobal : ExportDesc
-{
-    public GlobalIndex Value { get; }
-
-    public ExportDescGlobal(GlobalIndex value)
-    {
-        Value = value;
-    }
-}
+internal record ExportDescGlobal(GlobalIndex Value) : ExportDesc;

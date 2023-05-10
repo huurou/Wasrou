@@ -48,49 +48,15 @@ internal class Export
     }
 }
 
-internal abstract class ExportDesc
-{
-}
+internal abstract record ExportDesc;
 
-internal class ExportDescFunction : ExportDesc
-{
-    public FunctionIndex Index { get; }
+internal record ExportDescFunction(FunctionIndex Index) : ExportDesc;
 
-    public ExportDescFunction(FunctionIndex index)
-    {
-        Index = index;
-    }
-}
+internal record ExportDescTable(TableIndex Index) : ExportDesc;
 
-internal class ExportDescTable : ExportDesc
-{
-    public TableIndex Index { get; }
+internal record ExportDescMemory(MemoryIndex Index) : ExportDesc;
 
-    public ExportDescTable(TableIndex index)
-    {
-        Index = index;
-    }
-}
-
-internal class ExportDescMemory : ExportDesc
-{
-    public MemoryIndex Index { get; }
-
-    public ExportDescMemory(MemoryIndex index)
-    {
-        Index = index;
-    }
-}
-
-internal class ExportDescGlobal : ExportDesc
-{
-    public GlobalIndex Index { get; }
-
-    public ExportDescGlobal(GlobalIndex index)
-    {
-        Index = index;
-    }
-}
+internal record ExportDescGlobal(GlobalIndex Index) : ExportDesc;
 
 internal enum ExportKind
 {
